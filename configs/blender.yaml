@@ -1,0 +1,43 @@
+# Experiment parameters
+iterations: 20_000
+densify_from: 1_000
+densify_until: 16_000
+quantile_weight: 0.0
+normal_weight: 0.1
+contribution_weight: 0.1
+interpenetration_weight: 1e-4
+
+# Dataset parameters
+dataset: "blender"
+data_path: "data/blender"
+scene: "chair"
+alpha_format_on_disk: "straight"
+downsample: [2, 1]
+downsample_iterations: [0, 1_000]
+
+# Model parameters
+init_type: "random_bounded"
+init_points: 20_000
+final_points: 50_000
+bkgd_color: [0.0, 0.0, 0.0]
+render_objective: "volume"
+sv_dof: 8
+num_texel_sites: 8
+
+# Optimization parameters
+points_lr_init: 1e-2
+points_lr_final: 1e-4
+density_lr_init: 1e1
+density_lr_final: 1e1
+hardness_lr_init: 1e1
+hardness_lr_final: 1e-1
+radii_lr_init: 1e-4
+radii_lr_final: 1e-4
+quaternions_lr_init: 1e-1
+quaternions_lr_final: 1e-2
+texel_sites_lr_init: 5e-3
+texel_sites_lr_final: 5e-3
+sv_axis_lr_init: 5e-2
+sv_axis_lr_final: 5e-3
+sv_rgb_lr_init: 5e-3
+sv_rgb_lr_final: 5e-4

@@ -1,0 +1,45 @@
+# Experiment parameters
+iterations: 30_000
+densify_from: 1_000
+densify_until: 24_000
+quantile_weight: 0.0
+normal_weight: 0.1
+contribution_weight: 0.1
+interpenetration_weight: 1e-4
+
+# Dataset parameters
+dataset: "colmap"
+data_path: "data/mipnerf360"
+scene: "garden"
+alpha_format_on_disk: "premultiplied"
+downsample: [8, 4]
+downsample_iterations: [0, 500]
+
+# Model parameters
+init_type: "sfm"
+init_points: 100_000
+final_points: 1_000_000
+bkgd_color: [0.0, 0.0, 0.0]
+render_objective: "volume"
+sv_dof: 8
+num_texel_sites: 8
+
+# Optimization parameters
+points_lr_init: 1e-3
+points_lr_final: 1e-4
+density_lr_init: 1e0
+density_lr_final: 1e0
+hardness_lr_init: 1e1
+hardness_lr_final: 1e-1
+radii_lr_init: 1e-4
+radii_lr_final: 1e-5
+quaternions_lr_init: 1e-1
+quaternions_lr_final: 1e-2
+texel_sites_lr_init: 1e-2
+texel_sites_lr_final: 1e-3
+texel_sv_axis_lr_init: 1e-2
+texel_sv_axis_lr_final: 1e-3
+texel_sv_rgb_lr_init: 2e-3
+texel_sv_rgb_lr_final: 2e-4
+texel_height_lr_init: 1e-2
+texel_height_lr_final: 1e-3
