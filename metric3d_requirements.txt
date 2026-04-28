@@ -1,0 +1,18 @@
+# Optional dependencies for the Metric3D normal/depth estimator pipeline.
+#
+# These are only needed if you want to:
+#   * pre-process a dataset with `--use_metric3d True` (which downloads the
+#     `yvanyin/metric3d` ViT-Large model from torch.hub on first use), or
+#   * supervise normals with the Metric3D ground-truth normals
+#     (`--normal_supervision --use_metric3d True`).
+#
+# Install on top of `requirements.txt`:
+#   pip install -r metric3d_requirements.txt
+
+mmcv==2.2.0
+mmengine==0.10.7
+timm==1.0.25
+huggingface_hub==1.6.0
+safetensors==0.7.0
+opencv-python==4.13.0.92
+opencv-python-headless==4.13.0.92

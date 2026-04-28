@@ -1,0 +1,12 @@
+.vscode
+
+*.egg-info
+__pycache__
+/*nsight
+*.mp4
+*ipynb
+*.sh
+
+/data
+/output*
+/logs

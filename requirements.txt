@@ -1,0 +1,27 @@
+# -- Numerics / IO ----------------------------------------------------------
+numpy==2.1.2
+scipy==1.16.2
+pillow==11.0.0
+pyyaml==6.0.2
+configargparse==1.7.1
+matplotlib==3.10.6
+tqdm==4.67.1
+einops==0.8.1
+plyfile==1.1.2
+fpsample==0.3.3
+pycolmap==3.12.0
+open3d==0.19.0
+
+# -- Logging ----------------------------------------------------------------
+tensorboard==2.20.0
+
+# -- Eval metrics -----------------------------------------------------------
+lpips==0.1.4
+
+# -- GPU runtime / kernels --------------------------------------------------
+warp-lang==1.10.0
+
+# -- Viewer (optional but required for `view.py` / `--viewer` flag) --------
+imgui-bundle>=1.6.0
+glfw>=2.7.0
+PyOpenGL>=3.1.7
