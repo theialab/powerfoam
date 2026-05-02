@@ -127,9 +127,7 @@ def train(args):
 
         average_psnr = sum(psnr_list) / len(psnr_list)
         average_ssim = sum(ssim_list) / len(ssim_list)
-        average_lpips = (
-            sum(lpips_list) / len(lpips_list) if lpips_list else None
-        )
+        average_lpips = sum(lpips_list) / len(lpips_list) if lpips_list else None
         if final and not args.dry_run:
             with open(f"{out_dir}/metrics.txt", "w") as f:
                 f.write(f"Average PSNR:  {average_psnr:.4f}\n")
@@ -371,6 +369,12 @@ def train(args):
                 torch.cuda.nvtx.range_pop()  # Resampling
                 torch.cuda.nvtx.range_pop()  # Train Step
 
+                # Clean up memory if it exceeds 20GB
+                # Force garbage collection and clear PyTorch cache
+                reserved_mem = torch.cuda.memory_reserved() / 1024**3
+                if reserved_mem > 20.0:
+                    gc.collect()
+                    torch.cuda.empty_cache()
 
         if not args.dry_run:
             model.save_pt(f"{out_dir}/model.pt")
